@@ -1,11 +1,10 @@
-export { decode, encode } from "https://deno.land/std/encoding/utf8.ts";
 export {
   clearDown,
   goUp,
   goLeft,
   hideCursor,
   showCursor,
-} from "https://raw.githubusercontent.com/iamnathanj/cursor/v2.0.0/mod.ts";
+} from "https://denopkg.com/iamnathanj/cursor@v2.2.0/mod.ts";
 
 export {
   green,
@@ -13,5 +12,5 @@ export {
   yellow,
   bold,
   blue,
-} from "https://deno.land/std@0.55.0/fmt/colors.ts";
-export { readKeypress } from "https://raw.githubusercontent.com/dmitriytat/keypress/0.0.3/mod.ts";
+} from "https://deno.land/std@0.138.0/fmt/colors.ts";
+export { readKeypress } from "https://deno.land/x/keypress@0.0.8/mod.ts";

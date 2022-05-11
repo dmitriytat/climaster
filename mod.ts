@@ -1,8 +1,6 @@
 import {
   bold,
   clearDown,
-  decode,
-  encode,
   goLeft,
   goUp,
   green,
@@ -14,7 +12,7 @@ import {
 } from "./dep.ts";
 
 export async function print(message: string) {
-  await Deno.stdout.write(encode(message));
+  await Deno.stdout.write(new TextEncoder().encode(message));
 }
 
 export async function printLines(message: string) {
@@ -34,7 +32,7 @@ export async function printLines(message: string) {
 export async function readLine(): Promise<string> {
   const buffer = new Uint8Array(1024);
   const length = <number> await Deno.stdin.read(buffer);
-  return decode(buffer.subarray(0, length - 1));
+  return new TextDecoder().decode(buffer.subarray(0, length - 1));
 }
 
 export async function ask({ question }: Params): Promise<string> {
